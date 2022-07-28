@@ -1,0 +1,162 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <!-- https://cdnjs.com/libraries/twitter-bootstrap/5.0.0-beta1 -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/css/bootstrap.min.css" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- Icons: https://getbootstrap.com/docs/5.0/extend/icons/ -->
+    <!-- https://cdnjs.com/libraries/font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <link href="./coffeshop.css" rel="stylesheet">
+
+    <title class="text-color"> Wake Up Café</title>
+</head>
+
+<body class="mask d-flex vw-100% vh-100 align-items-center justify-content-center "
+    style="background: url(./image.jpg); justify-content: center;background-repeat: no-repeat;background-position: center;background-size: cover; background-color: rgba(9, 9, 9, 0.6);">
+
+    <form  id="myForm" class="border a1" >
+        <div class="container-fluid">
+
+
+            <div class="part1  col-12 ">
+
+                <h1 class="text-center   pt-5 pb-3 " style="color: white;" ><b> Wake Up Café </b></h1>
+               <h5 style="color: white;">Name:</h5> 
+                <input type="text" id="name">
+               
+
+<button type="button" onclick="calname()">submit</button>
+
+<hr>
+
+            </div>
+            <div class="part2 col-12 ">
+
+                <fieldset>
+                    <table class="table align-middle table-borderd">
+                        <thead>
+                            <tr>
+                                <th scope="col"style="color: white;">coffe Brand</th>
+                                <th scope="col"style="color: white;">price</th>
+                                <th scope="col"style="color: white;">Quantity</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row"style="color: white;">Death wish coffee</th>
+                                <td style="color: white;">200 Rs</td>
+                                <td><input type="number" id="quantityDeath"></td>
+                                <td>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"style="color: white;">Starbucks Fresh Rost</th>
+                                <td style="color: white;">250 Rs</td>
+                                <td><input type="number" id="quantityStarbucks"></td>
+                                <td>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row" style="color: white;">Rissing Brazil Pabrey</th>
+                                <td style="color: white;">300 Rs</td>
+                                <td><input type="number" id="quantityRissing"></td>
+                                <td>
+                            </tr>
+                            <tr>
+                                <th scope="row"style="color: white;">Lvaza Supper Creame</th>
+                                <td style="color: white;">350 Rs</td>
+                                <td><input type="number" id="quantityLvaza"></td>
+                                <td>
+                            </tr>
+                            <tr>
+                                <th scope="row"style="color: white;">Hawaian Gold kona</th>
+                                <td style="color: white;">280 Rs</td>
+                                <td><input type="number" id="quantityHawaian"></td>
+                                <td>
+                            </tr>
+
+                            <tr>
+                                <th></th>
+                                <td>
+                                    <div class="text-center"><b style="color: white;">10% tax is included</b></div>
+                                </td>
+                                <td></td>
+                            </tr>
+
+
+                        </tbody>
+
+                    </table>
+
+                    <button type="button" onclick="calculate()">Total</button>
+                    <button type="text" onClick="clear()">Clear</button>
+                    <button type="button" onClick="alert()">Submit</button>
+                </fieldset>
+
+                <br>
+                <b style="color: white;">Name:</b>
+               <span id="pname"  style="color: white;"></span> 
+                <hr>
+                <b style="color: white;">Order Total Rs:</b>
+                <span id="result" style="color: white;"
+                ></span>
+
+            </div>
+        </div>
+
+
+        </div>
+
+        </div>
+    </form>
+    <script>
+        function calname(){
+            var name = document.getElementById("name").value;
+document.getElementById("pname").innerHTML = name;
+        }
+        function calculate() {
+            var Death = 200;
+            var Starbucks = 250;
+            var Rissing = 300;
+            var Lvaza = 350;
+            var Hawaian = 280;
+var tax =  1- 0.1;
+
+
+            var a = document.getElementById("quantityDeath").value;
+            var b = document.getElementById("quantityStarbucks").value;
+            var c = document.getElementById("quantityRissing").value;
+            var d = document.getElementById("quantityLvaza").value;
+            var e = document.getElementById("quantityHawaian").value;
+
+
+
+
+
+
+            document.getElementById("result").innerHTML = a * Death / tax+ b * Starbucks / tax + c * Rissing / tax+ d * Lvaza / tax + e * Hawaian / tax;
+        }
+        function clear() {
+            document.getElementById("myForm").reset();
+        }
+        function alert() {
+            swal("THANK YOU!", "Thanks For Contact Us!");
+        }
+
+    </script>
+
+
+</body>
+
+</html>
